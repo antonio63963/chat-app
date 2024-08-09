@@ -1,0 +1,12 @@
+node_modules/
+dist/
+keys/
+upload/
+.env
+config.js
+
+# Optional npm cache directory
+.npm
+
+# Output of 'npm pack'
+*.tgz
