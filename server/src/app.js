@@ -3,6 +3,7 @@ import cors from "cors";
 import 'dotenv/config';
 import http from "http";
 import { Server } from "socket.io";
+import mongoose from "mongoose";
 
 // import onConnection from "./socket_io/onConnection.js";
 import { getFilePath } from "./utils/file.js";
