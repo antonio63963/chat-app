@@ -1,3 +1,5 @@
+import { USER_KEY } from "../constants";
+
 const storage = {
   get: (key) => {
     const dataFromLocal = localStorage.getItem(key);
@@ -5,6 +7,9 @@ const storage = {
   },
   set: (key, value) => {
     localStorage.setItem(key, JSON.stringify(value));
+  },
+  getUser: () => {
+    return this.get(USER_KEY);
   }
 };
 
