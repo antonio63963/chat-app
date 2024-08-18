@@ -1,4 +1,4 @@
-import useChat from "hooks/useChat";
+import useChat from "../../hooks/useChat.js";
 
 import MessageList from "./MessageList/MessageList.js";
 import MessageInput from "./MessageInput/MessageInput.js";

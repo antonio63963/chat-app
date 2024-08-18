@@ -1,5 +1,5 @@
 import { Picker } from "emoji-mart";
-import "emoji-mart/css/emoji-mart.css";
+// import "emoji-mart/css/emoji-mart.css";
 import AppContext from "../../../../context/AppContext";
 import { useCallback, useContext, useEffect } from "react";
 import { BsEmojiSmile } from "react-icons/bs";
