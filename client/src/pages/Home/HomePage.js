@@ -1,13 +1,12 @@
 import { NameInput, Room } from "../../components";
-import { USER_KEY } from "../../constants";
 import storage from "../../utils/storage";
 
 const HomePage = () => {
-  const user = storage.get(USER_KEY);
+  const user = storage.getUser();
   console.log(user)
   
-  // return user ? <Room /> : <NameInput />;
-  return <>Hello</>
+  return user ? <Room /> : <NameInput />;
+
 };
 
 export default HomePage;

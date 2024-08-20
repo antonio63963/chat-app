@@ -1,4 +1,4 @@
-import { AiOutlineUser } from "react-icons";
+import { AiOutlineUser } from "react-icons/ai";
 
 const UserList = ({ users }) => {
   return (

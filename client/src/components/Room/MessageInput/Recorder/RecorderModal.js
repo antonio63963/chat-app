@@ -18,8 +18,8 @@ const RecordingModal = ({ setShowModal }) => {
   const { setNewFile } = useContext(AppContext);
   const [selectedMediaType, setSelectedMediaType] = useState("audio");
   const [isPaused, setIsPaused] = useState(false);
-  const selectRecordType = useRef();
-  const videoRef = useRef();
+  const selectRecordType = useRef(null);
+  const videoRef = useRef(null);
 
   const onChange = ({ target: { value } }) => {
     // audio or video

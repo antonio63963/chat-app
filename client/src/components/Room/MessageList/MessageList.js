@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import MessageItem from "./MessageItem.js";
 
 const MessageList = ({ log, messages, removeMessage }) => {
-  const logRef = useRef();
-  const bottomRef = useRef();
+  const logRef = useRef(null);
+  const bottomRef = useRef(null);
 
   //scroll to bottom last sms
 

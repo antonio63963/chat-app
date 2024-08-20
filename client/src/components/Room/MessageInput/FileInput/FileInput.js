@@ -7,8 +7,8 @@ import FilePreview from "./FilePrewiew.js";
 
 const FileInput = () => {
   const { file, setNewFile } = useContext(AppContext);
+  const inputRef = useRef(null);
 
-  const inputRef = useRef();
   useEffect(() => {
     if (!file) {
       inputRef.current.value = "";

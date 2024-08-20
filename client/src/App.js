@@ -13,16 +13,20 @@ function App() {
   return (
     <BrowserRouter>
       <AppContext.Provider
-        file={file}
-        setFile={setFile}
-        showEmoji={showEmoji}
-        setShowEmoji={setShowEmoji}
-        showPreview={showPreview}
-        setShowPreview={setShowPreview}
+        value={{
+          file,
+          setFile,
+          showEmoji,
+          setShowEmoji,
+          showPreview,
+          setShowPreview,
+        }}
       >
         <AppRoutes />
+    
       </AppContext.Provider>
     </BrowserRouter>
+   
   );
 }
 

@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react";
 
 import { IoIosSend } from "react-icons/io";
 
-import fileApi from "api/file.api.js";
+import fileApi from "../../../api/file.api.js";
 import storage from "../../../utils/storage.js";
 
 import EmojiMart from "./EmojiMart/EmojiMart.js";
@@ -16,7 +16,7 @@ import AppContext from "../../../context/AppContext";
 const MessageInput = ({ sendMessage }) => {
   const [text, setText] = useState("");
   const [submitDisabled, setSubmitDisabled] = useState(true);
-  const inputRef = useRef();
+  const inputRef = useRef(null);
   const user = storage.getUser();
   const context = useState(AppContext);
 
@@ -69,8 +69,9 @@ const MessageInput = ({ sendMessage }) => {
 
   return (
     <form onSubmit={onSubmit} className="form message">
-      <EmojiMart />
+      <EmojiMart setText={setText} messageInput={inputRef.current} />
       <FileInput />
+      <Recorder />
       <input
         type="text"
         autoFocus
