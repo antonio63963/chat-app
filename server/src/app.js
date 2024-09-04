@@ -36,7 +36,7 @@ app.use("/files", (req, res) => {
 app.use(onError);
 
 try {
-  await mongoose.connect(process.env.MONGODB_URI, {
+  await mongoose.connect(process.env.MONGODB_APP, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

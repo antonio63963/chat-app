@@ -7,7 +7,8 @@
   "scripts": {
     "dev:client": "npm run start --prefix client",
     "dev:server": "npm run start --prefix sever",
-    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\""
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "serve": "node src/app.js"
   },
   "keywords": [],
   "author": "",

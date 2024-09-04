@@ -1,5 +1,10 @@
 import mongoose from "mongoose";
 import path from "node:path";
+import * as URL from 'url';
+
+const __filename =  URL.fileURLToPath(import.meta.url);
+const fileExt = path.extname(__filename);
+
 
 const { Schema } = mongoose;
 
@@ -26,8 +31,8 @@ const generalSchema = new Schema({
     required: true,
   },
 
-  timestamps: true,
-});
+  
+}, {timestamps: true});
 
-const fileName = path.basename(__filename, ".js");
+const fileName = path.basename(__filename, fileExt);
 export default mongoose.model(fileName, generalSchema);
