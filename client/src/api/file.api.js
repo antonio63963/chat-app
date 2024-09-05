@@ -1,4 +1,4 @@
-const { SERVER_URI } = require('constants')
+const { SERVER_URI } = require('../constants')
 
 const upload = async ({ file, roomId }) => {
   try {
