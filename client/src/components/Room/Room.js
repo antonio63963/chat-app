@@ -9,9 +9,15 @@ const Room = () => {
 
   return (
     <div className="container chat">
-      <div className="container messge">
-        <MessageList />
+      <div className="container message">
+        <MessageList
+          log={log}
+          messages={messages}
+          removeMessage={removeMessage}
+        />
+        <MessageInput sendMessage={sendMessage} />
       </div>
+      <UserList users={users} />
     </div>
   );
 };

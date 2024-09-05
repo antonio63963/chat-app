@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 
-import { SERVER_URL, USER_KEY } from "../constants";
+import { SERVER_URL } from "../constants";
 import storage from "../utils/storage";
 
 const useChat = () => {
-  const user = storage.get(USER_KEY);
+  const user = storage.getUser();
   const [users, setUsers] = useState([]);
   const [messages, setMessages] = useState([]);
   const [log, setLog] = useState(null);

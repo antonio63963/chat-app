@@ -8,7 +8,7 @@ const storage = {
   set: (key, value) => {
     localStorage.setItem(key, JSON.stringify(value));
   },
-  getUser: () => {
+  getUser: function() {
     return this.get(USER_KEY);
   }
 };
