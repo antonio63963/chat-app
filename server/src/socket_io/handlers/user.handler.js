@@ -12,17 +12,21 @@ function userHandlers(io, socket) {
   };
 
   socket.on("user:add", async (user) => {
+    console.log("USER:ADD: ", user);
     socket.to(roomId).emit("log", `User ${userName} connected`);
     user.sockedId = socket.id;
-    users[roomId].push(user);
-    updateUserList();
+    const isUserAdded = users[roomId].some((u) => u.userName === user.userName);
+    if (!isUserAdded) {
+      users[roomId].push(user);
+      updateUserList();
+    }
   });
 
-  socket.on('disconnect', () => {
-    if(!users[roomId]) return;
-    socket.to(roomId).emit('log', `User ${userName} disconnected`);
+  socket.on("disconnect", () => {
+    if (!users[roomId]) return;
+    socket.to(roomId).emit("log", `User ${userName} disconnected`);
     updateUserList();
-  })
+  });
 }
 
 export default userHandlers;

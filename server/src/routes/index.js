@@ -1,6 +1,7 @@
 import express from 'express';
 
 import {uploadFile} from '../utils/upload.js';
+import { getFilePath } from '../utils/file.js';
 
 const route = express.Router();
 
