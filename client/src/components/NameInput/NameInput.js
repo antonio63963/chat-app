@@ -17,7 +17,8 @@ const NameInput = () => {
     setSubmitDisabled(isSomeFieldEmpty);
   }, [formData]);
 
-  const onChange = useCallback(({ taget: { name, value } }) => {
+  const onChange = useCallback(({ target: { name, value } }) => {
+    console.log(name, value)
     setFormData((currentState) => ({ ...currentState, [name]: value }));
   }, []);
 

@@ -18,7 +18,7 @@ const MessageInput = ({ sendMessage }) => {
   const [submitDisabled, setSubmitDisabled] = useState(true);
   const inputRef = useRef(null);
   const user = storage.getUser();
-  const context = useState(AppContext);
+  const context = useContext(AppContext);
 
   const {
     file,
@@ -34,7 +34,7 @@ const MessageInput = ({ sendMessage }) => {
   }, [text, file]);
 
   useEffect(() => {
-    setShowPreview(file);
+    setShowPreview(!!file);
   }, [file, setShowPreview]);
 
   const onSubmit = async (e) => {
