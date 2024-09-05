@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import "dotenv/config";
 
+
 import { Server } from "socket.io";
 
 import appRouter from "./routes/index.js";
@@ -15,7 +16,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: process.env.ALLOWED_ORIGIN,
+    origin: process.env.ALLOWED_ORIGIN_APP,
   })
 );
 
