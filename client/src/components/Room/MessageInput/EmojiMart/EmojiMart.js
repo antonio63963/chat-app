@@ -1,5 +1,5 @@
-import { Picker } from "emoji-mart";
-// import "emoji-mart/css/emoji-mart.css";
+import Picker from "@emoji-mart/react";
+import emojiData from "@emoji-mart/data";
 import AppContext from "../../../../context/AppContext";
 import { useCallback, useContext, useEffect } from "react";
 import { BsEmojiSmile } from "react-icons/bs";
@@ -7,6 +7,8 @@ import { BsEmojiSmile } from "react-icons/bs";
 const EmojiMart = ({ setText, messageInput }) => {
   const context = useContext(AppContext);
   const { showEmoji, setShowEmoji, showPreview } = context;
+
+  console.log("MESSAGE INPUT: ", messageInput, "PICKER: ", Picker);
 
   const onKeydown = useCallback(
     (e) => {
@@ -26,7 +28,9 @@ const EmojiMart = ({ setText, messageInput }) => {
   //add emoji to text message
   const onSelected = ({ native }) => {
     setText((text) => text + native);
-    messageInput.focus();
+    if (messageInput) {
+      messageInput.focus();
+    }
   };
 
   return (
@@ -42,7 +46,8 @@ const EmojiMart = ({ setText, messageInput }) => {
 
       {showEmoji && (
         <Picker
-          onSelect={onSelected}
+          data={emojiData}
+          onEmojiSelect={onSelected}
           emojiSize={20}
           showPreview={false}
           perLine={6}
@@ -53,4 +58,3 @@ const EmojiMart = ({ setText, messageInput }) => {
 };
 
 export default EmojiMart;
-
